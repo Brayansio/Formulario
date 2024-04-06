@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Evento</title>
+  <link rel="stylesheet" href="Fm.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Evento</h1>
+    <form id="registrationForm" onsubmit="return validarFormulario()">
+      <div class="form-group">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <span class="error-message" id="nombre-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">Correo Electronico:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="email-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Formato: 123-456-7890" required>
+        <span class="error-message" id="telefono-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="evento">Selecciona el Tipo de Entrada:</label>
+        <select id="evento" name="evento" required>
+          <option value="">-- Selecciona un evento --</option>
+          <option value="General">General</option>
+          <option value="VIP">VIP</option>
+          <option value="Platinum">Platinum</option>
+        </select>
+        <span class="error-message" id="evento-error"></span>
+      </div>
+      <button type="submit">Registrarse</button>
+    </form>
+    <div class="Detalles del Evento">
+        <h2> Detalles del Evento </h2>
+        <p> Fecha: 10 de Mayo del 2024 </p>
+        <p> Lugar:Plaza la Tecnologia </p>
+        <p> Descripcion: Innovacion hacia el futuro </p>
+
+    <p id="mensaje"></p>
+  </div>
+  <div id="mensaje-validacion" class="mensaje-validacion"></div>
+  <script src="Fm.js"></script>
+</body>
+</html>
